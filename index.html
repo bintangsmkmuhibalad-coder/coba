@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <title>Pengecekan Suhu</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Program Cek suhu</h1>
+        <label for="suhu">Masukkan Suhu (°C):</label>
+        <input type="number" id="suhu" placeholder="contoh: 25">
+        <button onclick="cekSuhu()">Cek</button>
+        <p id="hasil"></p>
+    </div>
+
+    <script>
+        function cekSuhu() {
+            let suhu = document.getElementById("suhu").value;
+            // Gunakan operator ternary bersarang
+            let pesan = (suhu >= 30)
+                     ? "Cuaca panas"
+                      : (suhu >= 10 && suhu < 30) 
+                      ? "Cuaca sejuk"
+                      : (suhu < 10) 
+                      ? "Cuaca dingin"
+                      : "Tidak terdefinisi";
+            document.getElementById("hasil").textContent = pesan;
+        }
+    </script>
+</body>
+</html>
